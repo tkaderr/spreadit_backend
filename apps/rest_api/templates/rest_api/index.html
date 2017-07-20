@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hello world</title>
+</head>
+<body>
+<h2>Login</h2>
+<form action="/login" method="POST">
+	{% csrf_token %}
+	<p>Email: <input type="email" name="email"></p>
+	<p>Password: <input type="password" name="password"></p>
+	<p><input type="submit" name="submit"></p>
+</form>
+
+<h2>Create user</h2>
+<form action="/createUser" method="POST">
+	{% csrf_token %}
+	<p>Username: <input type="text" name="username"></p>
+	<p>First name: <input type="text" name="first_name"></p>
+	<p>Last name: <input type="text" name="last_name"></p>
+	<p>Email: <input type="email" name="email"></p>
+	<p>Password: <input type="password" name="password"></p>
+	<p>Confirm Password: <input type="password" name="confirm_pw"></p>
+	<p><input type="submit" name="submit"></p>
+</form>
+
+<h2>Create post</h2>
+<form action="/createPost" method="POST">
+	{% csrf_token %}
+	<p>Content url: <input type="text" name="content"></p>
+	<p>Posted by: <input type="text" name="posted_by"></p>
+	<p><input type="submit" name="submit"></p>
+</form>
+
+<h2>Swipe on post</h2>
+<form action="/swipePost" method="POST">
+	{% csrf_token %}
+	<p>Post id: <input type="text" name="post_id"></p>
+	<p>User id: <input type="text" name="user_id"></p>
+	<p>Liked: <input type="hidden" name="like" value="0"><input type="checkbox" name="like" value="1"></p>
+	<p><input type="submit" name="submit"></p>
+</form>
+
+<h2>Add Post to Feed</h2>
+<form action="/addPostToFeed" method="POST">
+	{% csrf_token %}
+	<p>Post id: <input type="text" name="post_id"></p>
+	<p>User id: <input type="text" name="user_id"></p>
+	<p><input type="submit" name="submit"></p>
+</form>
+
+</body>
+</html>
